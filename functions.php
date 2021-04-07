@@ -2,7 +2,7 @@
 
 function get_response($id_response)
 {
-    $url = 'https://alumnosws-default-rtdb.firebaseio.com/estasrespuestas/'.$id_response.'.json';
+    $url = 'https://alumnosws-default-rtdb.firebaseio.com/respuestas/'.$id_response.'.json';
     $ch =  curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -17,7 +17,7 @@ function get_response($id_response)
 }
 
 function get_user($user) {
-    $url = 'https://alumnosws-default-rtdb.firebaseio.com/estasusuarios/'.$user.'.json';
+    $url = 'https://alumnosws-default-rtdb.firebaseio.com/usuarios/'.$user.'.json';
 
     $ch =  curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
@@ -35,7 +35,7 @@ function get_user($user) {
 
 function update_user($user, $new_pass) {
 
-        $url = 'https://alumnosws-default-rtdb.firebaseio.com/estasusuarios.json';
+        $url = 'https://alumnosws-default-rtdb.firebaseio.com/usuarios.json';
         $data = '{
             "'.$user.'":"'.$new_pass.'"
         }';
@@ -77,7 +77,7 @@ function getISBN($isbn) {
     //echo 'ISBN: '. $isbn;
     if(strlen($isbn) > 0)
     {
-        $url = 'https://alumnosws-default-rtdb.firebaseio.com/estasdetalles/'.$isbn.'.json';
+        $url = 'https://alumnosws-default-rtdb.firebaseio.com/detalles/'.$isbn.'.json';
         $ch =  curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -108,7 +108,7 @@ function json_incompleat($json){
 }
 
 function create_product($isbn,$json) {
-    $url = 'https://alumnosws-default-rtdb.firebaseio.com/estasdetalles/'.$isbn.'.json';
+    $url = 'https://alumnosws-default-rtdb.firebaseio.com/detalles/'.$isbn.'.json';
 
     $ch =  curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
@@ -129,7 +129,7 @@ function create_product($isbn,$json) {
 
 function update_product($isbn,$json)
 {
-    $url = 'https://alumnosws-default-rtdb.firebaseio.com/estasdetalles/'.$isbn.'.json';
+    $url = 'https://alumnosws-default-rtdb.firebaseio.com/detalles/'.$isbn.'.json';
         $ch = curl_init();
         curl_setopt( $ch, CURLOPT_URL, $url);
         curl_setopt( $ch, CURLOPT_CUSTOMREQUEST, "PATCH" );
@@ -147,7 +147,7 @@ function update_product($isbn,$json)
 
 function delete_product($isbn)
 {
-    $url = 'https://alumnosws-default-rtdb.firebaseio.com/estasdetalles/'.$isbn.'.json';
+    $url = 'https://alumnosws-default-rtdb.firebaseio.com/detalles/'.$isbn.'.json';
     $ch = curl_init();
     curl_setopt( $ch, CURLOPT_URL, $url);
     curl_setopt( $ch, CURLOPT_CUSTOMREQUEST, "PATCH" );
