@@ -46,21 +46,35 @@ public class consultar_producto extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         Respuesta = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 102, 255));
+        getContentPane().setLayout(null);
 
         Usuario.setText("Usuario");
+        getContentPane().add(Usuario);
+        Usuario.setBounds(10, 98, 36, 14);
 
         user.setText("usuario");
+        getContentPane().add(user);
+        user.setBounds(10, 118, 189, 20);
 
         jLabel1.setText("Contraseña");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(10, 156, 56, 14);
 
         pass.setText("Contraseña");
+        getContentPane().add(pass);
+        pass.setBounds(10, 181, 189, 20);
 
         jLabel2.setText("Ingresa ISBN");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(10, 219, 63, 14);
 
         text.setText("ISBN");
+        getContentPane().add(text);
+        text.setBounds(10, 251, 189, 20);
 
         buscar.setText("Buscar");
         buscar.setActionCommand("");
@@ -69,6 +83,8 @@ public class consultar_producto extends javax.swing.JFrame {
                 buscarActionPerformed(evt);
             }
         });
+        getContentPane().add(buscar);
+        buscar.setBounds(63, 289, 65, 23);
 
         Eliminar.setText("Eliminar");
         Eliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -76,8 +92,12 @@ public class consultar_producto extends javax.swing.JFrame {
                 EliminarActionPerformed(evt);
             }
         });
+        getContentPane().add(Eliminar);
+        Eliminar.setBounds(173, 289, 69, 23);
 
         atras.setLabel("Atrás");
+        getContentPane().add(atras);
+        atras.setBounds(248, 289, 59, 23);
 
         Respuesta.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -92,70 +112,16 @@ public class consultar_producto extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(Respuesta);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UH.png"))); // NOI18N
+        getContentPane().add(jScrollPane2);
+        jScrollPane2.setBounds(300, 100, 340, 163);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jLabel2)
-                                        .addComponent(jLabel1)
-                                        .addComponent(user)
-                                        .addComponent(pass)
-                                        .addComponent(text, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(Usuario))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(53, 53, 53)
-                                .addComponent(buscar)
-                                .addGap(45, 45, 45)
-                                .addComponent(Eliminar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(atras)
-                                .addGap(19, 19, 19)))
-                        .addGap(40, 40, 40)))
-                .addGap(236, 236, 236))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(98, 98, 98)
-                        .addComponent(Usuario)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(pass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addComponent(text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(buscar)
-                            .addComponent(Eliminar)
-                            .addComponent(atras))))
-                .addContainerGap(46, Short.MAX_VALUE))
-        );
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UH.png"))); // NOI18N
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(606, 0, 91, 80);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo3.jpg"))); // NOI18N
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(0, -90, 970, 580);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -257,6 +223,7 @@ public class consultar_producto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField pass;
     private javax.swing.JTextField text;

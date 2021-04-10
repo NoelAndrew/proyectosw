@@ -110,6 +110,14 @@ function getProd($user,$pass,$categoria) {
                 curl_close($ch);
                 $response = json_decode($response);
 
+                if(empty($cat) || !isset($cat)){
+                    return FALSE;
+                }
+                else{
+                    $reference = $this->database->getReference($this->$url)->orderByChild('isbn')->equalTo($data['ISBN'])->update($data);
+                    return TRUE;
+                }
+
             if ( $cat != null ) {
                $resp = array( 
                 'code' => '200', 
