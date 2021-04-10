@@ -36,16 +36,28 @@ public class actualizarContraseña extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         AtrasBtn = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(102, 102, 255));
+        getContentPane().setLayout(null);
 
         jLabel1.setText("Usuario");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(25, 11, 36, 14);
 
         jLabel2.setText("Contraseña");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(25, 61, 56, 14);
 
         jLabel3.setText("Nueva Contraseña");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(25, 133, 90, 14);
 
         UsuarioTxtField.setText("usuario");
+        getContentPane().add(UsuarioTxtField);
+        UsuarioTxtField.setBounds(25, 31, 179, 20);
 
         ContraTxtField.setText("Contraseña");
         ContraTxtField.addActionListener(new java.awt.event.ActionListener() {
@@ -53,6 +65,8 @@ public class actualizarContraseña extends javax.swing.JFrame {
                 ContraTxtFieldActionPerformed(evt);
             }
         });
+        getContentPane().add(ContraTxtField);
+        ContraTxtField.setBounds(25, 86, 179, 20);
 
         NewContraTxtField1.setText("Nueva Contraseña");
         NewContraTxtField1.addActionListener(new java.awt.event.ActionListener() {
@@ -60,67 +74,31 @@ public class actualizarContraseña extends javax.swing.JFrame {
                 NewContraTxtField1ActionPerformed(evt);
             }
         });
+        getContentPane().add(NewContraTxtField1);
+        NewContraTxtField1.setBounds(25, 158, 179, 20);
 
         ActBtn.setText("Actualizar");
+        getContentPane().add(ActBtn);
+        ActBtn.setBounds(125, 241, 79, 23);
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        AtrasBtn.setText("Atrás");
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(300, 40, 166, 96);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(NewContraTxtField1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ContraTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(UsuarioTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addGap(171, 171, 171)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(311, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(621, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(ActBtn)
-                        .addGap(152, 152, 152))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(AtrasBtn)
-                        .addGap(36, 36, 36))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(UsuarioTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(ContraTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(NewContraTxtField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(ActBtn)
-                .addGap(93, 93, 93)
-                .addComponent(AtrasBtn)
-                .addContainerGap(145, Short.MAX_VALUE))
-        );
+        AtrasBtn.setText("Atrás");
+        getContentPane().add(AtrasBtn);
+        AtrasBtn.setBounds(25, 241, 59, 23);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UH.png"))); // NOI18N
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(510, 130, 100, 100);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo3.jpg"))); // NOI18N
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(-60, -140, 720, 520);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -177,6 +155,8 @@ public class actualizarContraseña extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables

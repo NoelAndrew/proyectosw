@@ -40,10 +40,16 @@ public class consultar_categoria extends javax.swing.JFrame {
         atrasBtn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         Respuesta = new javax.swing.JTable();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(51, 102, 255));
+        getContentPane().setLayout(null);
 
         jLabel1.setText("Usuario");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(43, 92, 36, 14);
 
         Usuario.setText("Usuario");
         Usuario.addActionListener(new java.awt.event.ActionListener() {
@@ -51,14 +57,24 @@ public class consultar_categoria extends javax.swing.JFrame {
                 UsuarioActionPerformed(evt);
             }
         });
+        getContentPane().add(Usuario);
+        Usuario.setBounds(43, 112, 228, 20);
 
         jLabel2.setText("Contraseña");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(43, 138, 56, 14);
 
         Contra.setText("Contraseña");
+        getContentPane().add(Contra);
+        Contra.setBounds(43, 158, 228, 20);
 
         jLabel3.setText("Categoría");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(43, 189, 47, 14);
 
         Categoria.setText("Categoría");
+        getContentPane().add(Categoria);
+        Categoria.setBounds(43, 209, 228, 20);
 
         BuscarBtn.setText("Buscar");
         BuscarBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -66,8 +82,12 @@ public class consultar_categoria extends javax.swing.JFrame {
                 BuscarBtnActionPerformed(evt);
             }
         });
+        getContentPane().add(BuscarBtn);
+        BuscarBtn.setBounds(122, 247, 65, 23);
 
         atrasBtn.setText("Atrás");
+        getContentPane().add(atrasBtn);
+        atrasBtn.setBounds(450, 300, 59, 23);
 
         Respuesta.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -92,52 +112,16 @@ public class consultar_categoria extends javax.swing.JFrame {
         jScrollPane1.setViewportView(Respuesta);
         Respuesta.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(86, 86, 86)
-                .addComponent(BuscarBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(atrasBtn))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2)
-                    .addComponent(Usuario)
-                    .addComponent(jLabel1)
-                    .addComponent(Contra, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
-                    .addComponent(Categoria))
-                .addGap(31, 31, 31)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 347, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Contra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Categoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
-                .addComponent(atrasBtn)
-                .addGap(32, 32, 32)
-                .addComponent(BuscarBtn)
-                .addContainerGap(171, Short.MAX_VALUE))
-        );
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(302, 92, 452, 196);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UH.png"))); // NOI18N
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(690, 0, 88, 74);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo3.jpg"))); // NOI18N
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(0, 0, 800, 533);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -226,6 +210,8 @@ public class consultar_categoria extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
