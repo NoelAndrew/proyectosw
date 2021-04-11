@@ -2,11 +2,13 @@
 import Modelos.Product;
 import Modelos.RespuestaProduct;
 import Servicio.restclient;
-import java.awt.Component;
 import java.io.IOException;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-
+import org.codehaus.jackson.JsonParseException;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
 /**
  *
@@ -31,17 +33,21 @@ public class consultar_categoria extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        Usuario = new javax.swing.JTextField();
+        userTextField = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        Contra = new javax.swing.JTextField();
+        ContraTxtField = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        Categoria = new javax.swing.JTextField();
+        CategoriaTxtField = new javax.swing.JTextField();
         BuscarBtn = new javax.swing.JButton();
-        atrasBtn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
+<<<<<<< HEAD
         Respuesta = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+=======
+        jTextArea1 = new javax.swing.JTextArea();
+        atrasBtn = new javax.swing.JButton();
+>>>>>>> parent of eb82dc8 (fsdfdsf)
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 102, 255));
@@ -51,6 +57,7 @@ public class consultar_categoria extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(43, 92, 36, 14);
 
+<<<<<<< HEAD
         Usuario.setText("Usuario");
         Usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -59,22 +66,33 @@ public class consultar_categoria extends javax.swing.JFrame {
         });
         getContentPane().add(Usuario);
         Usuario.setBounds(43, 112, 228, 20);
+=======
+        userTextField.setText("Usuario");
+>>>>>>> parent of eb82dc8 (fsdfdsf)
 
         jLabel2.setText("Contraseña");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(43, 138, 56, 14);
 
+<<<<<<< HEAD
         Contra.setText("Contraseña");
         getContentPane().add(Contra);
         Contra.setBounds(43, 158, 228, 20);
+=======
+        ContraTxtField.setText("Contraseña");
+>>>>>>> parent of eb82dc8 (fsdfdsf)
 
         jLabel3.setText("Categoría");
         getContentPane().add(jLabel3);
         jLabel3.setBounds(43, 189, 47, 14);
 
+<<<<<<< HEAD
         Categoria.setText("Categoría");
         getContentPane().add(Categoria);
         Categoria.setBounds(43, 209, 228, 20);
+=======
+        CategoriaTxtField.setText("Categoría");
+>>>>>>> parent of eb82dc8 (fsdfdsf)
 
         BuscarBtn.setText("Buscar");
         BuscarBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -85,33 +103,19 @@ public class consultar_categoria extends javax.swing.JFrame {
         getContentPane().add(BuscarBtn);
         BuscarBtn.setBounds(122, 247, 65, 23);
 
+<<<<<<< HEAD
         atrasBtn.setText("Atrás");
         getContentPane().add(atrasBtn);
         atrasBtn.setBounds(450, 300, 59, 23);
+=======
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+>>>>>>> parent of eb82dc8 (fsdfdsf)
 
-        Respuesta.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+        atrasBtn.setText("Atrás");
 
-            },
-            new String [] {
-                "ISBN", "Titulo"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        Respuesta.setColumnSelectionAllowed(true);
-        Respuesta.setEditingColumn(1);
-        Respuesta.setEditingRow(1);
-        Respuesta.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(Respuesta);
-        Respuesta.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-
+<<<<<<< HEAD
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(302, 92, 452, 196);
 
@@ -122,6 +126,55 @@ public class consultar_categoria extends javax.swing.JFrame {
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo3.jpg"))); // NOI18N
         getContentPane().add(jLabel5);
         jLabel5.setBounds(0, 0, 800, 533);
+=======
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(atrasBtn)
+                .addGap(85, 85, 85))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2)
+                            .addComponent(userTextField)
+                            .addComponent(jLabel1)
+                            .addComponent(ContraTxtField, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
+                            .addComponent(CategoriaTxtField))
+                        .addGap(24, 24, 24)
+                        .addComponent(BuscarBtn)))
+                .addContainerGap(39, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(userTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ContraTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CategoriaTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BuscarBtn))
+                .addGap(16, 16, 16)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(atrasBtn)
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
+>>>>>>> parent of eb82dc8 (fsdfdsf)
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -131,41 +184,27 @@ public class consultar_categoria extends javax.swing.JFrame {
         RespuestaProduct<Product> response = null;
 		restclient consulta = new restclient();
 		try {
-			response = consulta.getProduct(Usuario.getText(),Contra.getText(), Categoria.getText());
-		} 
-                catch (IOException e1) {
+			response = consulta.getProduct("pruebas1", "12345678a", "libros");
+		} catch (IOException e1) {
             // TODO Auto-generated catch block
 
 		}
 		if(response.getCode().equals("200"))
 		{
 			Product[] nuevo = response.getData();
-                        Object [][] a  = new Object[nuevo.length][2];
-                        String  b [] = {
-                            "ISBN", "Titulo"
-                        };
-                        int aux=0;
-                        int aux2=0;
-                        DefaultTableModel model = (DefaultTableModel) Respuesta.getModel();
-                    for (Product nuevo1 : nuevo) {
-                         a[aux][aux2]=nuevo1.isbn;
-                         aux2++;
-                         a[aux][aux2]=nuevo1.nombre;
-                         aux++;
-                         aux2=0;
-                         }
-                         model.setDataVector(a, b);
-                         Respuesta.setModel(model);
-                        }
-                else{
-                    JOptionPane.showMessageDialog(null, response.getMessage());
-                }
+            for (Product nuevo1 : nuevo) {
+                jTextArea1.setText(nuevo1.isbn );
+                System.out.println(nuevo1.isbn + nuevo1.nombre);
+            }
+		}else
+		{
+			
+		}
+        
+        
+        
         
     }//GEN-LAST:event_BuscarBtnActionPerformed
-
-    private void UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_UsuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -195,17 +234,17 @@ public class consultar_categoria extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new consultar_categoria().setVisible(true);
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new consultar_categoria().setVisible(true);
+            }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BuscarBtn;
-    private javax.swing.JTextField Categoria;
-    private javax.swing.JTextField Contra;
-    javax.swing.JTable Respuesta;
-    private javax.swing.JTextField Usuario;
+    private javax.swing.JTextField CategoriaTxtField;
+    private javax.swing.JTextField ContraTxtField;
     private javax.swing.JButton atrasBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -213,5 +252,7 @@ public class consultar_categoria extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextField userTextField;
     // End of variables declaration//GEN-END:variables
 }
