@@ -1,5 +1,7 @@
 package interfaces;
 
+import java.awt.Color;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -17,6 +19,8 @@ public class consultar_producto extends javax.swing.JFrame {
      */
     public consultar_producto() {
         initComponents();
+        this.getContentPane().setBackground(Color.blue);
+
     }
 
     /**
@@ -64,6 +68,11 @@ public class consultar_producto extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTextArea1);
 
         atras.setLabel("Atrás");
+        atras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                atrasActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -128,6 +137,11 @@ public class consultar_producto extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
+         index obj = new index();
+        obj.setVisible(true);
+    }//GEN-LAST:event_atrasActionPerformed
 
     /**
      * @param args the command line arguments
