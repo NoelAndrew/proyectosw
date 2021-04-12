@@ -1,3 +1,13 @@
+
+import Modelos.Details;
+import Modelos.RespuestaText;
+import Servicio.restclient;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import org.codehaus.jackson.map.JsonMappingException;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -27,133 +37,222 @@ public class actualizar_producto extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        usuarioTxtField = new javax.swing.JTextField();
+        Usuario = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        ContraTxtField1 = new javax.swing.JTextField();
+        pass = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        ISBNTxtField2 = new javax.swing.JTextField();
+        ISBN = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        ISBNTxtField3 = new javax.swing.JTextField();
+        Nombre = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        AutorTxtField4 = new javax.swing.JTextField();
+        autor = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        AnioTxtField5 = new javax.swing.JTextField();
+        date = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        AutorTxtField6 = new javax.swing.JTextField();
+        Editorial = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        PrecioTxtField7 = new javax.swing.JTextField();
+        Precio = new javax.swing.JTextField();
         RegistrarBtn = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         atrasBtn = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(51, 102, 255));
-        getContentPane().setLayout(null);
 
         jLabel1.setText("Usuario");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(80, 50, 36, 14);
-        jLabel1.getAccessibleContext().setAccessibleName("");
 
-        usuarioTxtField.setText("Usuario");
-        getContentPane().add(usuarioTxtField);
-        usuarioTxtField.setBounds(80, 70, 207, 20);
+        Usuario.setText("Usuario");
+        Usuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UsuarioActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Contraseña");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(80, 100, 56, 14);
 
-        ContraTxtField1.setText("Contraseña");
-        getContentPane().add(ContraTxtField1);
-        ContraTxtField1.setBounds(80, 130, 207, 20);
+        pass.setText("Contraseña");
 
         jLabel3.setText("ISBN");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(80, 160, 23, 14);
 
-        ISBNTxtField2.setText("ISBN");
-        getContentPane().add(ISBNTxtField2);
-        ISBNTxtField2.setBounds(80, 180, 207, 20);
+        ISBN.setText("ISBN");
 
         jLabel4.setText("Nombre");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(80, 210, 37, 14);
 
-        ISBNTxtField3.setText("Nombre");
-        getContentPane().add(ISBNTxtField3);
-        ISBNTxtField3.setBounds(80, 230, 207, 20);
+        Nombre.setText("Nombre");
 
         jLabel5.setText("Autor");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(80, 260, 27, 14);
 
-        AutorTxtField4.setText("Autor");
-        getContentPane().add(AutorTxtField4);
-        AutorTxtField4.setBounds(80, 280, 207, 20);
+        autor.setText("Autor");
 
         jLabel6.setText("Año");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(80, 300, 19, 14);
 
-        AnioTxtField5.setText("Año");
-        getContentPane().add(AnioTxtField5);
-        AnioTxtField5.setBounds(80, 320, 207, 20);
+        date.setText("Año");
 
-        jLabel7.setText("Autor");
-        getContentPane().add(jLabel7);
-        jLabel7.setBounds(80, 350, 27, 14);
+        jLabel7.setText("Editorial");
 
-        AutorTxtField6.setText("Autor");
-        getContentPane().add(AutorTxtField6);
-        AutorTxtField6.setBounds(80, 370, 207, 20);
+        Editorial.setText("Editorial");
 
         jLabel8.setText("Precio");
-        getContentPane().add(jLabel8);
-        jLabel8.setBounds(80, 400, 29, 14);
 
-        PrecioTxtField7.setText("Precio");
-        getContentPane().add(PrecioTxtField7);
-        PrecioTxtField7.setBounds(80, 420, 207, 20);
+        Precio.setText("Precio");
 
         RegistrarBtn.setText("Registrar");
-        getContentPane().add(RegistrarBtn);
-        RegistrarBtn.setBounds(120, 460, 77, 23);
+        RegistrarBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegistrarBtnActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Actualizar");
-        getContentPane().add(jButton1);
-        jButton1.setBounds(230, 460, 79, 23);
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
-
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(90, 490, 274, 114);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         atrasBtn.setText("Atrás");
-        getContentPane().add(atrasBtn);
-        atrasBtn.setBounds(80, 570, 59, 23);
+        atrasBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                atrasBtnActionPerformed(evt);
+            }
+        });
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UH.png"))); // NOI18N
-        getContentPane().add(jLabel9);
-        jLabel9.setBounds(1609, 0, 86, 91);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel8)
+                            .addComponent(Editorial, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7)
+                            .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6)
+                            .addComponent(autor, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel5))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4)
+                            .addComponent(ISBN, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3)
+                            .addComponent(pass, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2)
+                            .addComponent(Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Precio, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(48, 48, 48)
+                                .addComponent(RegistrarBtn)
+                                .addGap(68, 68, 68)
+                                .addComponent(jButton1))
+                            .addComponent(atrasBtn, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addContainerGap(94, Short.MAX_VALUE))))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(8, 8, 8)
+                .addComponent(Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ISBN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(autor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Editorial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Precio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(RegistrarBtn)
+                    .addComponent(jButton1))
+                .addGap(37, 37, 37)
+                .addComponent(atrasBtn)
+                .addContainerGap(46, Short.MAX_VALUE))
+        );
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UH.png"))); // NOI18N
-        getContentPane().add(jLabel10);
-        jLabel10.setBounds(320, 0, 140, 90);
-
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo.jpg"))); // NOI18N
-        jLabel11.setText("jLabel11");
-        getContentPane().add(jLabel11);
-        jLabel11.setBounds(0, 0, 460, 620);
+        jLabel1.getAccessibleContext().setAccessibleName("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void RegistrarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarBtnActionPerformed
+       
+         RespuestaText response = null;
+                restclient consulta = new restclient();
+                Details aux = new Details (autor.getText(),date.getText(),Editorial.getText(),ISBN.getText(),Nombre.getText(),Precio.getText()); 
+        try {
+            response = consulta.setProduct(Usuario.getText(), pass.getText(),aux);
+        } catch (JsonMappingException ex) {
+            Logger.getLogger(actualizarContraseña.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(actualizarContraseña.class.getName()).log(Level.SEVERE, null, ex);
+        }
+          if(response.getCode().equals("202"))
+		{
+                    JOptionPane.showMessageDialog(null,"Producto agregado el: " + response.getData());
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, response.getMessage());
+                }
+        
+        
+        
+    }//GEN-LAST:event_RegistrarBtnActionPerformed
+
+    private void UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UsuarioActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+RespuestaText response = null;
+                restclient consulta = new restclient();
+                Details aux = new Details (autor.getText(),date.getText(),Editorial.getText(),ISBN.getText(),Nombre.getText(),Precio.getText()); 
+        try {
+            response = consulta.updateProduct(Usuario.getText(), pass.getText(),aux);
+        } catch (JsonMappingException ex) {
+            Logger.getLogger(actualizarContraseña.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(actualizarContraseña.class.getName()).log(Level.SEVERE, null, ex);
+        }
+          if(response.getCode().equals("203"))
+		{
+                    JOptionPane.showMessageDialog(null,"Producto actualizado el: " + response.getData());
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, response.getMessage());
+                }        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void atrasBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasBtnActionPerformed
+       this.setVisible(false);
+       new index().setVisible(true);         // TODO add your handling code here:
+    }//GEN-LAST:event_atrasBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -191,19 +290,17 @@ public class actualizar_producto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField AnioTxtField5;
-    private javax.swing.JTextField AutorTxtField4;
-    private javax.swing.JTextField AutorTxtField6;
-    private javax.swing.JTextField ContraTxtField1;
-    private javax.swing.JTextField ISBNTxtField2;
-    private javax.swing.JTextField ISBNTxtField3;
-    private javax.swing.JTextField PrecioTxtField7;
+    private javax.swing.JTextField Editorial;
+    private javax.swing.JTextField ISBN;
+    private javax.swing.JTextField Nombre;
+    private javax.swing.JTextField Precio;
     private javax.swing.JButton RegistrarBtn;
+    private javax.swing.JTextField Usuario;
     private javax.swing.JButton atrasBtn;
+    private javax.swing.JTextField autor;
+    private javax.swing.JTextField date;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -211,9 +308,6 @@ public class actualizar_producto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField usuarioTxtField;
+    private javax.swing.JTextField pass;
     // End of variables declaration//GEN-END:variables
 }

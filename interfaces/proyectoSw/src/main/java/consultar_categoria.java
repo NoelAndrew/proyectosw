@@ -3,12 +3,12 @@ import Modelos.Product;
 import Modelos.RespuestaProduct;
 import Servicio.restclient;
 import java.io.IOException;
-import org.codehaus.jackson.JsonParseException;
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import org.codehaus.jackson.map.JsonMappingException;
+
 
 /**
  *
@@ -33,66 +33,34 @@ public class consultar_categoria extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        userTextField = new javax.swing.JTextField();
+        Usuario = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        ContraTxtField = new javax.swing.JTextField();
+        Contra = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        CategoriaTxtField = new javax.swing.JTextField();
+        Categoria = new javax.swing.JTextField();
         BuscarBtn = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-<<<<<<< HEAD
-        Respuesta = new javax.swing.JTable();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-=======
-        jTextArea1 = new javax.swing.JTextArea();
         atrasBtn = new javax.swing.JButton();
->>>>>>> parent of eb82dc8 (fsdfdsf)
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Respuesta = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(51, 102, 255));
-        getContentPane().setLayout(null);
 
         jLabel1.setText("Usuario");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(43, 92, 36, 14);
 
-<<<<<<< HEAD
         Usuario.setText("Usuario");
         Usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(Usuario);
-        Usuario.setBounds(43, 112, 228, 20);
-=======
-        userTextField.setText("Usuario");
->>>>>>> parent of eb82dc8 (fsdfdsf)
 
         jLabel2.setText("Contraseña");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(43, 138, 56, 14);
 
-<<<<<<< HEAD
         Contra.setText("Contraseña");
-        getContentPane().add(Contra);
-        Contra.setBounds(43, 158, 228, 20);
-=======
-        ContraTxtField.setText("Contraseña");
->>>>>>> parent of eb82dc8 (fsdfdsf)
 
         jLabel3.setText("Categoría");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(43, 189, 47, 14);
 
-<<<<<<< HEAD
         Categoria.setText("Categoría");
-        getContentPane().add(Categoria);
-        Categoria.setBounds(43, 209, 228, 20);
-=======
-        CategoriaTxtField.setText("Categoría");
->>>>>>> parent of eb82dc8 (fsdfdsf)
 
         BuscarBtn.setText("Buscar");
         BuscarBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -100,111 +68,135 @@ public class consultar_categoria extends javax.swing.JFrame {
                 BuscarBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(BuscarBtn);
-        BuscarBtn.setBounds(122, 247, 65, 23);
-
-<<<<<<< HEAD
-        atrasBtn.setText("Atrás");
-        getContentPane().add(atrasBtn);
-        atrasBtn.setBounds(450, 300, 59, 23);
-=======
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
->>>>>>> parent of eb82dc8 (fsdfdsf)
 
         atrasBtn.setText("Atrás");
+        atrasBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                atrasBtnActionPerformed(evt);
+            }
+        });
 
-<<<<<<< HEAD
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(302, 92, 452, 196);
+        Respuesta.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UH.png"))); // NOI18N
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(690, 0, 88, 74);
+            },
+            new String [] {
+                "ISBN", "Titulo"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo3.jpg"))); // NOI18N
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(0, 0, 800, 533);
-=======
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        Respuesta.setColumnSelectionAllowed(true);
+        Respuesta.setEditingColumn(1);
+        Respuesta.setEditingRow(1);
+        Respuesta.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(Respuesta);
+        Respuesta.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(atrasBtn)
-                .addGap(85, 85, 85))
             .addGroup(layout.createSequentialGroup()
                 .addGap(44, 44, 44)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(atrasBtn)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2)
-                            .addComponent(userTextField)
-                            .addComponent(jLabel1)
-                            .addComponent(ContraTxtField, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
-                            .addComponent(CategoriaTxtField))
-                        .addGap(24, 24, 24)
-                        .addComponent(BuscarBtn)))
-                .addContainerGap(39, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel3)
+                                .addComponent(jLabel2)
+                                .addComponent(Usuario)
+                                .addComponent(jLabel1)
+                                .addComponent(Contra, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
+                                .addComponent(Categoria))
+                            .addComponent(BuscarBtn))
+                        .addGap(31, 31, 31)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 30, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(userTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ContraTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CategoriaTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BuscarBtn))
-                .addGap(16, 16, 16)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Contra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Categoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(BuscarBtn))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
                 .addComponent(atrasBtn)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap())
         );
->>>>>>> parent of eb82dc8 (fsdfdsf)
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void BuscarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarBtnActionPerformed
        
-        RespuestaProduct<Product> response = null;
-		restclient consulta = new restclient();
-		try {
-			response = consulta.getProduct("pruebas1", "12345678a", "libros");
-		} catch (IOException e1) {
-            // TODO Auto-generated catch block
-
-		}
+                RespuestaProduct<Product> response = null;
+                restclient consulta = new restclient();
+		
+        try {
+            response = consulta.getProduct(Usuario.getText(),Contra.getText(), Categoria.getText());
+        } catch (JsonMappingException ex) {
+            Logger.getLogger(consultar_categoria.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(consultar_categoria.class.getName()).log(Level.SEVERE, null, ex);
+        }
+		 
 		if(response.getCode().equals("200"))
 		{
 			Product[] nuevo = response.getData();
-            for (Product nuevo1 : nuevo) {
-                jTextArea1.setText(nuevo1.isbn );
-                System.out.println(nuevo1.isbn + nuevo1.nombre);
-            }
-		}else
-		{
-			
-		}
-        
-        
-        
+                        Object [][] a  = new Object[nuevo.length][2];
+                        String  b [] = {
+                            "ISBN", "Titulo"
+                        };
+                        int aux=0;
+                        int aux2=0;
+                        DefaultTableModel model = (DefaultTableModel) Respuesta.getModel();
+                    for (Product nuevo1 : nuevo) {
+                         a[aux][aux2]=nuevo1.isbn;
+                         aux2++;
+                         a[aux][aux2]=nuevo1.nombre;
+                         aux++;
+                         aux2=0;
+                         }
+                         model.setDataVector(a, b);
+                         Respuesta.setModel(model);
+                        
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, response.getMessage());
+                }
         
     }//GEN-LAST:event_BuscarBtnActionPerformed
+
+    private void UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UsuarioActionPerformed
+
+    private void atrasBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasBtnActionPerformed
+this.setVisible(false);
+       new index().setVisible(true);         // TODO add your handling code here:
+    }//GEN-LAST:event_atrasBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -234,25 +226,21 @@ public class consultar_categoria extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new consultar_categoria().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new consultar_categoria().setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BuscarBtn;
-    private javax.swing.JTextField CategoriaTxtField;
-    private javax.swing.JTextField ContraTxtField;
+    private javax.swing.JTextField Categoria;
+    private javax.swing.JTextField Contra;
+    javax.swing.JTable Respuesta;
+    private javax.swing.JTextField Usuario;
     private javax.swing.JButton atrasBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField userTextField;
     // End of variables declaration//GEN-END:variables
 }

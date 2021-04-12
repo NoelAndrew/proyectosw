@@ -27,7 +27,7 @@ $app->post("/setProd",function($request,$response,$args){
 
 $app->put("/updatePass/{user}/{pass}",function($request,$response,$args){
     $reqPost = $request->getParsedBody();
-    $newpass = $reqPost['newpass'];
+    $newpass = $reqPost['nepe'];
     $response->write(json_encode(updatePassword($args['user'],$args['pass'],$newpass)));
     return $response;
 });

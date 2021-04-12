@@ -1,3 +1,11 @@
+
+import Modelos.RespuestaDetails;
+import Modelos.RespuestaText;
+import Servicio.restclient;
+import java.io.IOException;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -27,62 +35,30 @@ public class consultar_producto extends javax.swing.JFrame {
     private void initComponents() {
 
         Usuario = new javax.swing.JLabel();
-        UsuarioTxtField = new javax.swing.JTextField();
+        user = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        ContraTxtField = new javax.swing.JTextField();
+        pass = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        text = new javax.swing.JTextField();
         buscar = new javax.swing.JButton();
         Eliminar = new javax.swing.JToggleButton();
         atras = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-<<<<<<< HEAD
         Respuesta = new javax.swing.JTable();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-=======
-        jTable1 = new javax.swing.JTable();
->>>>>>> parent of eb82dc8 (fsdfdsf)
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(51, 102, 255));
-        getContentPane().setLayout(null);
 
         Usuario.setText("Usuario");
-        getContentPane().add(Usuario);
-        Usuario.setBounds(10, 98, 36, 14);
 
-<<<<<<< HEAD
         user.setText("usuario");
-        getContentPane().add(user);
-        user.setBounds(10, 118, 189, 20);
-=======
-        UsuarioTxtField.setText("usuario");
->>>>>>> parent of eb82dc8 (fsdfdsf)
 
         jLabel1.setText("Contraseña");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(10, 156, 56, 14);
 
-<<<<<<< HEAD
         pass.setText("Contraseña");
-        getContentPane().add(pass);
-        pass.setBounds(10, 181, 189, 20);
-=======
-        ContraTxtField.setText("Contraseña");
->>>>>>> parent of eb82dc8 (fsdfdsf)
 
         jLabel2.setText("Ingresa ISBN");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(10, 219, 63, 14);
 
-<<<<<<< HEAD
         text.setText("ISBN");
-        getContentPane().add(text);
-        text.setBounds(10, 251, 189, 20);
-=======
-        jTextField1.setText("ISBN");
->>>>>>> parent of eb82dc8 (fsdfdsf)
 
         buscar.setText("Buscar");
         buscar.setActionCommand("");
@@ -91,50 +67,34 @@ public class consultar_producto extends javax.swing.JFrame {
                 buscarActionPerformed(evt);
             }
         });
-        getContentPane().add(buscar);
-        buscar.setBounds(63, 289, 65, 23);
 
         Eliminar.setText("Eliminar");
-<<<<<<< HEAD
         Eliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EliminarActionPerformed(evt);
             }
         });
-        getContentPane().add(Eliminar);
-        Eliminar.setBounds(173, 289, 69, 23);
-=======
->>>>>>> parent of eb82dc8 (fsdfdsf)
 
         atras.setLabel("Atrás");
-        getContentPane().add(atras);
-        atras.setBounds(248, 289, 59, 23);
+        atras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                atrasActionPerformed(evt);
+            }
+        });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        Respuesta.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Autor", "Año", "Editorial", "ISBN", "Nombre", "Precio"
             }
         ));
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(Respuesta);
 
-<<<<<<< HEAD
-        getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(300, 100, 340, 163);
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UH.png"))); // NOI18N
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(606, 0, 91, 80);
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo3.jpg"))); // NOI18N
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(0, -90, 970, 580);
-=======
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -145,58 +105,117 @@ public class consultar_producto extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jLabel1)
                     .addComponent(Usuario)
-                    .addComponent(UsuarioTxtField)
-                    .addComponent(ContraTxtField, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
-                    .addComponent(jTextField1))
+                    .addComponent(user)
+                    .addComponent(pass, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
+                    .addComponent(text))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(atras)
-                .addGap(163, 163, 163))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 528, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(71, 71, 71)
                 .addComponent(buscar)
                 .addGap(45, 45, 45)
                 .addComponent(Eliminar)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 543, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(atras)
+                .addGap(163, 163, 163))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Usuario)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(UsuarioTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(ContraTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(109, 109, 109)
-                                .addComponent(atras)))
+                        .addComponent(Usuario)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(buscar)
-                            .addComponent(Eliminar))))
-                .addContainerGap(481, Short.MAX_VALUE))
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(pass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buscar)
+                    .addComponent(Eliminar))
+                .addGap(24, 24, 24)
+                .addComponent(atras)
+                .addContainerGap(95, Short.MAX_VALUE))
         );
->>>>>>> parent of eb82dc8 (fsdfdsf)
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarActionPerformed
-        // TODO add your handling code here:
+       
+
+    RespuestaDetails response = null;
+                restclient consulta = new restclient();
+                try {
+                        response = consulta.getDetails(user.getText(), pass.getText(), text.getText());
+                } catch (IOException e1) {
+        // TODO Auto-generated catch block
+
+                }
+                
+                if(response.getCode().equals("201"))
+                {
+                    Object [][] a  = new Object[1][6];
+                    DefaultTableModel model = (DefaultTableModel) Respuesta.getModel();
+                    
+                    String  b [] = {
+                            "Autor", "Año","Editorial", "ISBN","Nombre", "Precio"
+                        };
+                    
+                        a[0][0]= response.getData().getAutor();
+                        a[0][1]=response.getData().getAO();
+                        a[0][2]=response.getData().getEditorial(); 
+                        a[0][3]=response.getData().getISBN();
+                        a[0][4]=response.getData().getNombre();
+                        a[0][5]=response.getData().getPrecio();
+                            
+                    
+                   model.setDataVector(a, b);
+                    Respuesta.setModel(model);
+                           
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null, response.getMessage());
+                }
+                
     }//GEN-LAST:event_buscarActionPerformed
+
+    private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
+                RespuestaText  response = null;
+                restclient consulta = new restclient();
+                try {
+                        response = consulta.deleteProduct(user.getText(), pass.getText(), text.getText());
+                } catch (IOException e1) {
+        // TODO Auto-generated catch block
+
+                }
+                if(response.getCode().equals("204"))
+                {
+                    JOptionPane.showMessageDialog(null, "Producto eliminado: " + response.getData());
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null, response.getMessage());
+                }
+                
+    }//GEN-LAST:event_EliminarActionPerformed
+
+    private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
+this.setVisible(false);
+       new index().setVisible(true);         // TODO add your handling code here:
+    }//GEN-LAST:event_atrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -234,18 +253,16 @@ public class consultar_producto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField ContraTxtField;
     private javax.swing.JToggleButton Eliminar;
+    private javax.swing.JTable Respuesta;
     private javax.swing.JLabel Usuario;
-    private javax.swing.JTextField UsuarioTxtField;
     private javax.swing.JButton atras;
     private javax.swing.JButton buscar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField pass;
+    private javax.swing.JTextField text;
+    private javax.swing.JTextField user;
     // End of variables declaration//GEN-END:variables
 }
